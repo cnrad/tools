@@ -10,7 +10,7 @@ export default function App() {
                 <title>cnrad toolkit</title>
             </Head>
             <Entire>
-                <h1 style={{color: "#fff"}}>here are some useful tools ill make a home page later</h1>
+                <h1 style={{color: "#fff"}}>here are some useful tools, ill make a home page later</h1>
             </Entire>
         </>
     );
