@@ -9,21 +9,20 @@ function JsonTs() {
     const [inputValue, setInputValue] = useState("");
     const [result, setResult] = useState("");
 
-    const transformer = useCallback(async ({ value }) => {
+    const transformer = useCallback(async ({ inputValue }) => {
         const { run: compile } = await import("json_typegen_wasm");
-
+    
         try {
             return compile(
-               "Root",
-                value,
+                "Root",
+                inputValue,
                 JSON.stringify({
-                output_mode: "typescript",
+                    output_mode: "typescript",
                 })
             );
         } catch (e) {
             return e.toString();
         }
-        
     }, []);
     
     useEffect(() => {
@@ -39,7 +38,7 @@ function JsonTs() {
         <PageWrapper>
             <Container>
                 <TextArea placeholder="Paste JSON here..." value={inputValue} onChange={(e) => setInputValue(e.target.value)} />
-                <Result>{result}</Result>
+                <Result>{result.includes("export") ? result : "Waiting for JSON..."}</Result>
             </Container>
         </PageWrapper>
     );
@@ -53,34 +52,40 @@ const Container = styled.div`
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
-    align-items: center;
+    align-items: top;
     justify-content: center;
     padding: 2rem;
-
+    overflow: scroll;
 `
 
 const TextArea = styled.textarea`
-    width: 45%;
+    width: 35%;
+    height: 70%;
     min-height: 70%;
     background: #1a1a1a;
-    color: #fff;
     font-family: 'Roboto Mono', monospace;
-    padding: 1rem;
-    margin-right: 3rem;
-
+    padding: 1.5rem;
+    margin: 1.5rem;
+    resize: vertical;
     border: solid 1px #555;
-    border-radius: 1rem;
+    border-radius: 0.5rem;
+    color: #cfe8ff;
+    background: #000;
+    scrollbar-width: thin;
 `
 
 const Result = styled.pre`
-    width: 45%;
+    width: 35%;
     min-height: 70%;
+    height: auto;
     background: #1a1a1a;
-    color: #fff;
     font-family: 'Roboto Mono', monospace;
-    padding: 1rem;
+    padding: 1.5rem;
+    margin: 1.5rem;
     border: solid 1px #555;
-    border-radius: 1rem;
+    border-radius: 0.5rem;
+    color: #cfe8ff;
+    background: #000;
 `
 
 export default JsonTs;
