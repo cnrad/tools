@@ -1,6 +1,6 @@
 // import styled from 'styled-components';
 // import { motion } from 'framer-motion';
-import PageWrapper from "../../src/components/PageWrapper";
+import PageWrapper from "../src/components/PageWrapper";
 
 function deviceMockups() {
 

@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
-// import { Arrow } from "./Icons";
+import Link from 'next/link';
+import { useRouter } from 'next/router'
 import toolsList from "../../src/toolsList";
 
 function Nav() {
@@ -9,11 +9,14 @@ function Nav() {
     const hoverItem = {
         color: "#fff",
         x: 20,
+        cursor: "pointer",
         transition: {
             duration: 0.15,
             ease: "easeInOut"
         }
     }
+
+    const router = useRouter();
 
     return (
             <Container>
@@ -23,11 +26,12 @@ function Nav() {
                 <ToolItems>
 
                     {toolsList.map((obj) => (
-                        <To to={obj.url}>
+                        <ToolLink href={obj.url.toString()} 
+                        >
                             <Item whileHover={hoverItem}>
                                 <Arrow /> {obj.name}
                             </Item>
-                        </To>
+                        </ToolLink>
                     ))}
 
                 </ToolItems>
@@ -71,8 +75,9 @@ const ToolItems = styled(motion.div)`
     flex-wrap: wrap;
 `
 
-const To = styled(Link)`
+const ToolLink = styled(Link)`
     text-decoration: none;
+    user-select: none;
 `
 
 const Item = styled(motion.div)`
@@ -89,6 +94,7 @@ const Item = styled(motion.div)`
     align-items: center;
     justify-content: left;
     flex-wrap: nowrap;
+    font-family: 'Roboto Mono' !important;
 
     & > svg {
         transition: fill 0.15s ease-in-out;

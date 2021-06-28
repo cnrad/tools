@@ -1,6 +1,40 @@
-import type { AppProps } from 'next/app'
+import type { AppProps } from 'next/app';
+import styled from 'styled-components';
+import Head from "next/head";
+import { AnimatePresence, motion } from 'framer-motion';
 
-function MyApp({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
+import Nav from '../src/components/Nav';
+
+function MyApp({ Component, pageProps, router }: AppProps) {
+    return (
+        <>
+            <Head>
+                <link rel="preconnect" href="https://fonts.googleapis.com"  />
+                <link rel="preconnect" href="https://fonts.gstatic.com" />
+                <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet" /> 
+            </Head>
+
+            <Entire>
+                <Nav />
+
+                <AnimatePresence exitBeforeEnter>
+                    <Component {...pageProps} key={router.route} />
+                </AnimatePresence>
+            </Entire>
+        </>
+    )
 }
-export default MyApp
+
+export default MyApp;
+
+const Entire = styled(motion.div)`
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    inset: 0;
+    background: #18181b;
+
+    display: flex;
+    flex-direction: row;
+`
+

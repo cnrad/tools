@@ -2,7 +2,7 @@
 
 import styled from 'styled-components';
 import { useCallback, useEffect, useState } from "react";
-import PageWrapper from "../../src/components/PageWrapper";
+import PageWrapper from "../src/components/PageWrapper";
 
 function JsonTs() {
 
@@ -54,7 +54,7 @@ const Container = styled.div`
     flex-direction: row;
     flex-wrap: nowrap;
     align-items: center;
-    justify-content: top;
+    justify-content: center;
     padding: 2rem;
 
 `
@@ -66,7 +66,10 @@ const TextArea = styled.textarea`
     color: #fff;
     font-family: 'Roboto Mono', monospace;
     padding: 1rem;
-    margin-left: 3rem;
+    margin-right: 3rem;
+
+    border: solid 1px #555;
+    border-radius: 1rem;
 `
 
 const Result = styled.pre`
@@ -76,6 +79,8 @@ const Result = styled.pre`
     color: #fff;
     font-family: 'Roboto Mono', monospace;
     padding: 1rem;
+    border: solid 1px #555;
+    border-radius: 1rem;
 `
 
 export default JsonTs;
