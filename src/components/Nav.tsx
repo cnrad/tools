@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
-import { useRouter } from 'next/router'
 import toolsList from "../../src/toolsList";
 
 function Nav() {
@@ -16,8 +15,6 @@ function Nav() {
         }
     }
 
-    const router = useRouter();
-
     return (
             <Container>
                 <Header>
@@ -26,8 +23,7 @@ function Nav() {
                 <ToolItems>
 
                     {toolsList.map((obj) => (
-                        <ToolLink href={obj.url.toString()} 
-                        >
+                        <ToolLink key={obj.url.toString()} href={obj.url.toString()}>
                             <Item whileHover={hoverItem}>
                                 <Arrow /> {obj.name}
                             </Item>

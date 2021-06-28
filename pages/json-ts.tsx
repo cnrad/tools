@@ -1,5 +1,6 @@
 //thanks again github.com/alii @ uwu.red
 
+import { motion } from 'framer-motion';
 import styled from 'styled-components';
 import { useCallback, useEffect, useState } from "react";
 import PageWrapper from "../src/components/PageWrapper";
@@ -8,6 +9,7 @@ function JsonTs() {
 
     const [inputValue, setInputValue] = useState("");
     const [result, setResult] = useState("");
+    const [copyState, setCopyState] = useState("Copy");
 
     const transformer = useCallback(async ({ inputValue }) => {
         const { run: compile } = await import("json_typegen_wasm");
@@ -30,15 +32,20 @@ function JsonTs() {
         console.log(result);
     }, [inputValue]);
     
-    const copy = () => {
-        void navigator.clipboard.writeText(result);
+    const CopyVal = () => {
+        navigator.clipboard.writeText(result);
+        setCopyState("Copied!");
+        setTimeout(() => setCopyState("Copy"), 1500);
     };
 
     return (
         <PageWrapper>
             <Container>
                 <TextArea placeholder="Paste JSON here..." value={inputValue} onChange={(e) => setInputValue(e.target.value)} />
-                <Result>{result.includes("export") ? result : "Waiting for JSON..."}</Result>
+                <Col>
+                    <Result>{result.includes("export") ? result : "Waiting for JSON..."}</Result>
+                    <Copy whileHover={{color: "#fff", cursor: "pointer", scale: 0.9}} transition={{duration: 0.15, ease: "easeInOut"}} onClick={CopyVal}>{copyState}</Copy>
+                </Col>
             </Container>
         </PageWrapper>
     );
@@ -55,12 +62,11 @@ const Container = styled.div`
     align-items: top;
     justify-content: center;
     padding: 2rem;
-    overflow: scroll;
 `
 
 const TextArea = styled.textarea`
     width: 35%;
-    height: 70%;
+    height: 80%;
     min-height: 70%;
     background: #1a1a1a;
     font-family: 'Roboto Mono', monospace;
@@ -74,10 +80,19 @@ const TextArea = styled.textarea`
     scrollbar-width: thin;
 `
 
-const Result = styled.pre`
+const Col = styled.div`
+    display: flex;
+    flex-direction: column;
+    padding: 0 1.5rem;
+    margin: 0 1.5rem;
     width: 35%;
+    align-items: center;
+`
+
+const Result = styled.pre`
+    width: 100%;
     min-height: 70%;
-    height: auto;
+    height: 80%;
     background: #1a1a1a;
     font-family: 'Roboto Mono', monospace;
     padding: 1.5rem;
@@ -86,6 +101,17 @@ const Result = styled.pre`
     border-radius: 0.5rem;
     color: #cfe8ff;
     background: #000;
+    overflow-y: scroll;
+`
+
+const Copy = styled(motion.button)`
+    width: 6rem;
+    height: 2.5rem;
+    font-size: 1.2rem;
+    color: #bbb;
+    background: rgba(150, 150, 150, 0.2);
+    border: none;
+    border-radius: 0.5rem;
 `
 
 export default JsonTs;

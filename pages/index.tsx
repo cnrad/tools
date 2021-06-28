@@ -25,5 +25,7 @@ const Entire = styled(motion.div)`
     background: #18181b;
 
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 `

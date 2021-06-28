@@ -1,13 +1,11 @@
 const toolsList = [
     {
         url: "/json-ts",
-        name: "JSON to Type",
-        component: "jsonTs"
+        name: "JSON to Type"
     },
     {
         url: "/mockup",
-        name: "Device Mockups",
-        component: "deviceMockups"
+        name: "Device Mockups"
     }
 ];
 
