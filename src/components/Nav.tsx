@@ -55,6 +55,7 @@ const Header = styled(motion.div)`
     font-size: 3rem;
     font-weight: 400;
     margin: 2rem 0;
+    user-select: none;
 `
 
 const Cnrad = styled(motion.span)`
@@ -63,6 +64,7 @@ const Cnrad = styled(motion.span)`
     -webkit-background-clip: text;
     color: rgba(0, 0, 0, 0);
     font-weight: 700;
+    user-select: none;
 `
 
 const ToolItems = styled(motion.div)`
@@ -83,6 +85,7 @@ const Item = styled(motion.div)`
     color: #7b8290;
     font-size: 1.25rem;
     margin-left: -20px;
+    user-select: none;
 
     white-space: nowrap;
     display: flex;
@@ -90,7 +93,6 @@ const Item = styled(motion.div)`
     align-items: center;
     justify-content: left;
     flex-wrap: nowrap;
-    font-family: 'Roboto Mono' !important;
 
     & > svg {
         transition: fill 0.15s ease-in-out;

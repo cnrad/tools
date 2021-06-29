@@ -4,8 +4,16 @@ const toolsList = [
         name: "JSON to Type"
     },
     {
+        url: "/json-format",
+        name: "JSON Formatter"
+    },
+    {
         url: "/mockup",
         name: "Device Mockups"
+    },
+    {
+        url: "/color",
+        name: "Color Picker"
     }
 ];
 
