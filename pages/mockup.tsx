@@ -6,7 +6,7 @@ export default function deviceMockups() {
 
     return (
         <PageWrapper>
-            <h1>deviceMockups</h1>
+            <h1 style={{color: "#fff"}}>deviceMockups</h1>
         </PageWrapper>
     );
 }

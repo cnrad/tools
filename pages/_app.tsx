@@ -30,7 +30,7 @@ const Entire = styled(motion.div)`
     width: 100%;
     height: 100%;
     inset: 0;
-    background: #18181b;
+    background: #121214;
 
     display: flex;
     flex-direction: row;

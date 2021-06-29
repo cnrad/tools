@@ -44,6 +44,7 @@ const Container = styled(motion.div)`
     min-width: 16rem;
     height: 100%;
 
+    background: #18181b;
     color: #fff;
     font-family: -apple-system, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif;
     border-right: solid 0.1px #333;

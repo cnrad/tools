@@ -9,16 +9,18 @@ export default function App() {
             <Head>
                 <title>cnrad toolkit</title>
             </Head>
-            <div>test</div>
+            <Entire>
+                <h1 style={{color: "#fff"}}>here are some useful tools ill make a home page later</h1>
+            </Entire>
         </>
     );
 }
 
 const Entire = styled(motion.div)`
-    position: fixed;
-    width: 100%;
+    position: absolute;
+    width: calc(100% - 17rem);
     height: 100%;
-    inset: 0;
+    left: 17rem;
     background: #18181b;
 
     display: flex;

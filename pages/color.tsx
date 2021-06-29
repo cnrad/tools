@@ -110,6 +110,7 @@ const RGBA = styled.div`
     justify-content: center;
     font-size: 1.5rem;
     background: #111;
+    margin-bottom: 0;
 `
 
 const ColorCont = styled.div`
