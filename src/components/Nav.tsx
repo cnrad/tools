@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import Link from 'next/link';
 import toolsList from "../../src/toolsList";
 
-function Nav() {
+export default function Nav() {
 
     const hoverItem = {
         color: "#fff",
@@ -35,15 +35,13 @@ function Nav() {
     );
 }
 
-export default Nav;
-
 const Container = styled(motion.div)`
     position: relative;
     left: 0;
     top: 0;
     padding: 0 2rem;
-    width: 19rem;
-    min-width: 17rem;
+    width: 16rem;
+    min-width: 16rem;
     height: 100%;
 
     color: #fff;
@@ -52,9 +50,9 @@ const Container = styled(motion.div)`
 `
 
 const Header = styled(motion.div)`
-    font-size: 3rem;
+    font-size: 2.5rem;
     font-weight: 400;
-    margin: 2rem 0;
+    margin: 2rem 0 2rem 0.25rem;
     user-select: none;
 `
 

@@ -5,7 +5,7 @@ import { AnimatePresence, motion } from 'framer-motion';
 
 import Nav from '../src/components/Nav';
 
-function MyApp({ Component, pageProps, router }: AppProps) {
+export default function MyApp({ Component, pageProps, router }: AppProps) {
     return (
         <>
             <Head>
@@ -24,8 +24,6 @@ function MyApp({ Component, pageProps, router }: AppProps) {
         </>
     )
 }
-
-export default MyApp;
 
 const Entire = styled(motion.div)`
     position: fixed;

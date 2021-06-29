@@ -1,15 +1,15 @@
 import styled from 'styled-components';
-// import { motion } from 'framer-motion';
+// import { motion } from 'framer-motion'; USE DRAG CONSTRAINTS FOR COLOR
 import PageWrapper from "../src/components/PageWrapper";
 import { PhotoshopPicker } from 'react-color';
 import { useState } from 'react';
 
-function colorPicker() {
+export default function colorPicker() {
 
     const [hexState, setHexState] = useState("#ff0000");
     const [rgbaState, setRgbaState] = useState("255, 0, 0, 1");
 
-    function handleChange(color: any, event: any) {
+    const handleChange = (color: any, event: any) => {
         setHexState(color.hex);
         setRgbaState(`${color.rgb.r}, ${color.rgb.g}, ${color.rgb.b}, ${color.rgb.a}`);
     }
@@ -70,5 +70,3 @@ const RGBA = styled.div`
     align-items: center;
     justify-content: center;
 `
-
-export default colorPicker;

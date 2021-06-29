@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import { useState } from "react";
 import PageWrapper from "../src/components/PageWrapper";
 
-function JsonFormat() {
+export default function JsonFormat() {
 
     const [inputValue, setInputValue] = useState("");
 
@@ -88,6 +88,5 @@ const Result = styled.pre`
     color: #cfe8ff;
     background: #000;
     overflow-y: scroll;
+    scrollbar-width: thin;
 `
-
-export default JsonFormat;

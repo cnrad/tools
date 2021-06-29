@@ -5,7 +5,7 @@ import styled from 'styled-components';
 import { useCallback, useEffect, useState } from "react";
 import PageWrapper from "../src/components/PageWrapper";
 
-function JsonTs() {
+export default function JsonTs() {
 
     const [inputValue, setInputValue] = useState("");
     const [result, setResult] = useState("");
@@ -102,6 +102,7 @@ const Result = styled.pre`
     color: #cfe8ff;
     background: #000;
     overflow-y: scroll;
+    scrollbar-width: thin;
 `
 
 const Copy = styled(motion.button)`
@@ -113,5 +114,3 @@ const Copy = styled(motion.button)`
     border: none;
     border-radius: 0.5rem;
 `
-
-export default JsonTs;

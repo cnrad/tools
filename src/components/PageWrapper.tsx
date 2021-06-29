@@ -24,9 +24,9 @@ const PageWrapper = (props: any) => {
 const Wrapper = styled(motion.div)`
     position: relative;
     inset: 0;
-    width: 80%;
+    width: calc(100% - 16rem);
     height: 100%;
-    background: #18181b;
+    background: #121214;
 
     display: flex;
     flex-direction: column;

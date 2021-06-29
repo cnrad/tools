@@ -1,21 +1,18 @@
 import styled from 'styled-components';
 import Head from "next/head";
-import { AnimatePresence, motion } from 'framer-motion';
+import { motion } from 'framer-motion';
 
-import Nav from '../src/components/Nav';
-
-
-
-function App() {
+export default function App() {
 
     return ( 
         <>
+            <Head>
+                <title>cnrad toolkit</title>
+            </Head>
             <div>test</div>
         </>
     );
 }
-
-export default App;
 
 const Entire = styled(motion.div)`
     position: fixed;

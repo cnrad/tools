@@ -2,7 +2,7 @@
 // import { motion } from 'framer-motion';
 import PageWrapper from "../src/components/PageWrapper";
 
-function deviceMockups() {
+export default function deviceMockups() {
 
     return (
         <PageWrapper>
@@ -10,5 +10,3 @@ function deviceMockups() {
         </PageWrapper>
     );
 }
-
-export default deviceMockups;
