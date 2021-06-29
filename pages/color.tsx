@@ -4,7 +4,7 @@ import PageWrapper from "../src/components/PageWrapper";
 import { PhotoshopPicker } from 'react-color';
 import { useState } from 'react';
 
-export default function colorPicker() {
+export default function ColorPicker() {
 
     const [hexState, setHexState] = useState("#ff0000");
     const [rgbaState, setRgbaState] = useState("255, 0, 0, 1");
