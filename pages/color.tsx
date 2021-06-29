@@ -7,7 +7,7 @@ import { RgbaColorPicker } from "react-colorful";
 export default function ColorPicker() {
 
     const [hexState, setHexState] = useState("#ff0000");
-    const [rgbaState, setRgbaState] = useState({ r: 200, g: 150, b: 35, a: 0.5 });
+    const [rgbaState, setRgbaState] = useState({ r: 255, g: 0, b: 0, a: 1 });
 
     function hexify(color: number[]) {
         const zeroPad = (num:number, places:number) => num.toString(16).padStart(places, '0')
