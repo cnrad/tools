@@ -7,7 +7,7 @@ interface PasteEvent extends Event{
     clipboardData?: any;
 }
 
-export default function deviceMockups() {
+export default function DeviceMockups() {
 
     function readImg(event: any){
         document.getElementById('output')?.setAttribute("src", URL.createObjectURL(event.target.files[0]));
