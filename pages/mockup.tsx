@@ -30,13 +30,14 @@ export default function DeviceMockups() {
                 <UpperFlex>
                     <Direction>Select an image below, or paste one</Direction>
                     <ImgInput style={{zIndex: 100}} type='file' onChange={readImg} />
-                </UpperFlex>
-                
-
-                <FrameContainer>
+                    <FrameContainer>
                     <Frame src="/mockup/MacbookLight.png" />
                     <Result src="" id="output" />
                 </FrameContainer>
+                </UpperFlex>
+                
+
+                
             </PageWrapper>
         </>
     );
@@ -69,13 +70,16 @@ const ImgInput = styled.input`
 `
 
 const FrameContainer = styled.div`
+    position: relative;
     width: auto;
     height: auto;
+    width: 1001px;
+    height: 570px;
 `
 
 const Frame = styled.img`
     position: absolute;
-    top: calc(60% + 12px);
+    top: calc(50% + 12px);
     left: 50%;
     transform: translate(-50%, -50%);
 
@@ -84,7 +88,7 @@ const Frame = styled.img`
 `
 const Result = styled.img`
     position: absolute;
-    top: 60%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     margin-bottom: 0;
