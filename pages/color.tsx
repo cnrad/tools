@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-// import { motion } from 'framer-motion'; USE DRAG CONSTRAINTS FOR COLOR
+import Head from 'next/head';
 import PageWrapper from "../src/components/PageWrapper";
 import { useState, useEffect } from 'react';
 import { RgbaColorPicker } from "react-colorful";
@@ -31,20 +31,24 @@ export default function ColorPicker() {
     }, [rgbaState])
 
     return (
-        <PageWrapper>
-            
-            <Container>
-                <ColorCont>
-                    <RgbaPicker color={rgbaState} onChange={setRgbaState} />
-                </ColorCont>
-                
-                <Info>
-                    <ColorPrev color={`rgba(${rgbaState.r}, ${rgbaState.g}, ${rgbaState.b}, ${rgbaState.a})`} />
-                    <Hex>{hexState}</Hex>
-                    <RGBA>rgba({`${rgbaState.r}, ${rgbaState.g}, ${rgbaState.b}, ${rgbaState.a}`})</RGBA>
-                </Info>
-            </Container>
-        </PageWrapper>
+        <>
+            <Head>
+                <title>JSON Formatter</title>
+            </Head>
+            <PageWrapper>
+                <Container>
+                    <ColorCont>
+                        <RgbaPicker color={rgbaState} onChange={setRgbaState} />
+                    </ColorCont>
+                    
+                    <Info>
+                        <ColorPrev color={`rgba(${rgbaState.r}, ${rgbaState.g}, ${rgbaState.b}, ${rgbaState.a})`} />
+                        <Hex>{hexState}</Hex>
+                        <RGBA>rgba({`${rgbaState.r}, ${rgbaState.g}, ${rgbaState.b}, ${rgbaState.a}`})</RGBA>
+                    </Info>
+                </Container>
+            </PageWrapper>
+        </>
     );
 }
 

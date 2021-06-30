@@ -1,6 +1,7 @@
 //thanks again github.com/alii @ uwu.red
 
 import { motion } from 'framer-motion';
+import Head from 'next/head';
 import styled from 'styled-components';
 import { useCallback, useEffect, useState } from "react";
 import PageWrapper from "../src/components/PageWrapper";
@@ -39,15 +40,20 @@ export default function JsonTs() {
     };
 
     return (
-        <PageWrapper>
-            <Container>
-                <TextArea placeholder="Paste JSON here..." value={inputValue} onChange={(e) => setInputValue(e.target.value)} />
-                <Col>
-                    <Result>{result.includes("export") ? result : "Waiting for JSON..."}</Result>
-                    <Copy whileHover={{color: "#fff", cursor: "pointer", scale: 0.9}} transition={{duration: 0.15, ease: "easeInOut"}} onClick={CopyVal}>{copyState}</Copy>
-                </Col>
-            </Container>
-        </PageWrapper>
+        <>
+            <Head>
+                <title>JSON to Type Object</title>
+            </Head>
+            <PageWrapper>
+                <Container>
+                    <TextArea placeholder="Paste JSON here..." value={inputValue} onChange={(e) => setInputValue(e.target.value)} />
+                    <Col>
+                        <Result>{result.includes("export") ? result : "Waiting for JSON..."}</Result>
+                        <Copy whileHover={{color: "#fff", cursor: "pointer", scale: 0.9}} transition={{duration: 0.15, ease: "easeInOut"}} onClick={CopyVal}>{copyState}</Copy>
+                    </Col>
+                </Container>
+            </PageWrapper>
+        </>
     );
 }
 

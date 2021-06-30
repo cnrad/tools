@@ -2,6 +2,7 @@
 
 import styled from 'styled-components';
 import { useState } from "react";
+import Head from 'next/head';
 import PageWrapper from "../src/components/PageWrapper";
 
 export default function JsonFormat() {
@@ -26,14 +27,19 @@ export default function JsonFormat() {
     
 
     return (
-        <PageWrapper>
-            <Container>
-                <TextArea placeholder="Paste JSON here..." value={inputValue} onChange={(e) => setInputValue(e.target.value)} />
-                <Col>
-                    <Value value={inputValue} />
-                </Col>
-            </Container>
-        </PageWrapper>
+        <>
+            <Head>
+                <title>JSON Formatter</title>
+            </Head>
+            <PageWrapper>
+                <Container>
+                    <TextArea placeholder="Paste JSON here..." value={inputValue} onChange={(e) => setInputValue(e.target.value)} />
+                    <Col>
+                        <Value value={inputValue} />
+                    </Col>
+                </Container>
+            </PageWrapper>
+        </>
     );
 }
 

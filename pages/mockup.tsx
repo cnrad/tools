@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import Image from 'next/image';
+import Head from 'next/head';
 import { useEffect } from 'react';
 import PageWrapper from "../src/components/PageWrapper";
 
@@ -21,18 +22,23 @@ export default function DeviceMockups() {
     });
 
     return (
-        <PageWrapper>
-            <UpperFlex>
-                <Direction>Select an image below, or paste one</Direction>
-                <ImgInput style={{zIndex: 100}} type='file' onChange={readImg} />
-            </UpperFlex>
-            
+        <>
+            <Head>
+                <title>Design Mockups</title>
+            </Head>
+            <PageWrapper>
+                <UpperFlex>
+                    <Direction>Select an image below, or paste one</Direction>
+                    <ImgInput style={{zIndex: 100}} type='file' onChange={readImg} />
+                </UpperFlex>
+                
 
-            <FrameContainer>
-                <Frame src="/mockup/MacbookLight.png" />
-                <Result src="" id="output" />
-            </FrameContainer>
-        </PageWrapper>
+                <FrameContainer>
+                    <Frame src="/mockup/MacbookLight.png" />
+                    <Result src="" id="output" />
+                </FrameContainer>
+            </PageWrapper>
+        </>
     );
 }
 

@@ -1,7 +1,7 @@
 const toolsList = [
     {
         url: "/json-ts",
-        name: "JSON to Type"
+        name: "JSON to Type Object"
     },
     {
         url: "/json-format",
