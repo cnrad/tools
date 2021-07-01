@@ -14,6 +14,10 @@ export default function DeviceMockups() {
         document.getElementById('output')?.setAttribute("src", URL.createObjectURL(event.target.files[0]));
     }
 
+    function urlImg(e: any){
+        return document.getElementById('output')?.setAttribute("src", e.target.value);
+    }
+
     useEffect(() => {
         window.addEventListener('paste', (e: PasteEvent) => {
             if(e.clipboardData.files[0])
@@ -28,12 +32,13 @@ export default function DeviceMockups() {
             </Head>
             <PageWrapper>
                 <UpperFlex>
-                    <Direction>Select an image below, or paste one</Direction>
-                    <ImgInput style={{zIndex: 100}} type='file' onChange={readImg} />
+                    <Direction>Upload, paste, or type the URL for an image below</Direction>
+                    <URLInput type="text" onChange={urlImg} />
+                    <ImgInput id="imgInput" style={{zIndex: 100}} type='file' onChange={readImg} />
                     <FrameContainer>
-                    <Frame src="/mockup/MacbookLight.png" />
-                    <Result src="" id="output" />
-                </FrameContainer>
+                        <Frame src="/mockup/MacbookLight.png" />
+                        <Result src="" id="output" />
+                    </FrameContainer>
                 </UpperFlex>
                 
 
@@ -55,9 +60,12 @@ const UpperFlex = styled.div`
 
     display: flex;
     flex-direction: column;
-    flex-gap: 2rem;
     align-items: center;
     justify-content: center;
+
+    & > * {
+        margin-bottom: 1rem;
+    }
 `
 const Direction = styled.h1`
     color: #ccccdc;
@@ -67,6 +75,15 @@ const Direction = styled.h1`
 
 const ImgInput = styled.input`
     color: #fff;
+`
+
+const URLInput = styled.input`
+    color: #fff;
+    width: 15rem;
+    height: 2rem;
+    background: #18181b;
+    border: solid 1px #444;
+    border-radius: 0.25rem;
 `
 
 const FrameContainer = styled.div`
