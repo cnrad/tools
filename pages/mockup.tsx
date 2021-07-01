@@ -30,7 +30,7 @@ export default function DeviceMockups() {
             <Head>
                 <title>Design Mockups</title>
             </Head>
-            <PageWrapper>
+            <PageWrapper overflowY="scroll">
                 <UpperFlex>
                     <Direction>Upload, paste, or type the URL for an image below</Direction>
                     <URLInput type="text" onChange={urlImg} />
@@ -40,9 +40,6 @@ export default function DeviceMockups() {
                         <Result src="" id="output" />
                     </FrameContainer>
                 </UpperFlex>
-                
-
-                
             </PageWrapper>
         </>
     );
@@ -79,7 +76,8 @@ const ImgInput = styled.input`
 
 const URLInput = styled.input`
     color: #fff;
-    width: 15rem;
+    width: 50%;
+    min-width: 15rem;
     height: 2rem;
     background: #18181b;
     border: solid 1px #444;

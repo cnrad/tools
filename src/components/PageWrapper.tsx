@@ -10,7 +10,7 @@ const PageWrapper = (props: any) => {
       };
 
     return (
-        <Wrapper
+        <Wrapper overflowY={props.overflowY ? props.overflowY : "none"}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -21,12 +21,15 @@ const PageWrapper = (props: any) => {
     );
 }
 
-const Wrapper = styled(motion.div)`
+const Wrapper = styled(motion.div)<{overflowY: string}>`
     position: relative;
     inset: 0;
     width: calc(100% - 16rem);
     height: 100%;
     background: #121214;
+    overflow-y: ${({overflowY}) => overflowY};
+    scrollbar-width: thin;
+    -webkit-scrollbar-width: thin;
 
     display: flex;
     flex-direction: column;
