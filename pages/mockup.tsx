@@ -5,7 +5,7 @@ import { useEffect } from 'react';
 import PageWrapper from "../src/components/PageWrapper";
 import axios, { AxiosResponse } from 'axios';
 
-interface PasteEvent extends Event{
+interface PasteEvent extends Event {
     clipboardData?: any;
 }
 
@@ -20,11 +20,16 @@ export default function DeviceMockups() {
     }
 
     async function downloadBtn() {
-        let src = document.getElementById('output')!.getAttribute("src");
+        let src: string = document.getElementById('output')!.getAttribute("src") as string;
         if(src === "") return;
 
-        let res = await axios.get(`https://localhost:3000/api/createLaptopMockup?url=${src}`);
-
+        try {
+            let res = await axios.get(`/api/createMockupLaptop?url=${encodeURIComponent(src)}`);
+            console.log(res);
+            window.open(res.data.url);
+        } catch (e) {
+            console.log(e)
+        }
     }
 
     useEffect(() => {
