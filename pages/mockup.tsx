@@ -1,8 +1,9 @@
 import styled from 'styled-components';
-import Image from 'next/image';
 import Head from 'next/head';
+import { motion } from 'framer-motion';
 import { useEffect } from 'react';
 import PageWrapper from "../src/components/PageWrapper";
+import axios, { AxiosResponse } from 'axios';
 
 interface PasteEvent extends Event{
     clipboardData?: any;
@@ -16,6 +17,14 @@ export default function DeviceMockups() {
 
     function urlImg(e: any){
         return document.getElementById('output')?.setAttribute("src", e.target.value);
+    }
+
+    async function downloadBtn() {
+        let src = document.getElementById('output')!.getAttribute("src");
+        if(src === "") return;
+
+        let res = await axios.get(`https://localhost:3000/api/createLaptopMockup?url=${src}`);
+
     }
 
     useEffect(() => {
@@ -35,10 +44,19 @@ export default function DeviceMockups() {
                     <Direction>Upload, paste, or type the URL for an image below</Direction>
                     <URLInput type="text" onChange={urlImg} />
                     <ImgInput id="imgInput" style={{zIndex: 100}} type='file' onChange={readImg} />
+                    
                     <FrameContainer>
                         <Frame src="/mockup/MacbookLight.png" />
                         <Result src="" id="output" />
                     </FrameContainer>
+
+                    <DownloadBtn 
+                        onClick={downloadBtn} 
+                        whileHover={{scale: 0.9, backgroundColor: "rgba(80, 80, 80, 1)"}} 
+                        transition={{ease: "easeInOut", duration: 0.15}}
+                    >
+                        Download Mockup
+                    </DownloadBtn>
                 </UpperFlex>
             </PageWrapper>
         </>
@@ -90,6 +108,7 @@ const FrameContainer = styled.div`
     height: auto;
     width: 1001px;
     height: 570px;
+    margin-bottom: 5rem;
 `
 
 const Frame = styled.img`
@@ -110,4 +129,19 @@ const Result = styled.img`
 
     width: 770px;
     height: 478px;
+`
+
+const DownloadBtn = styled(motion.div)`
+    background: #333;
+    color: #fff;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    font-size: 1.1rem;
+    line-height: 1.1rem;
+    background-color: rgba(30, 30, 30, 1);
+    margin-bottom: 4rem;
+
+    &:hover {
+        cursor: pointer;
+    }
 `
