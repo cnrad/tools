@@ -16,10 +16,10 @@ export default async function handler(
     let url: string = req.query.url as string;
     url = decodeURIComponent(url);
 
-    console.log(url);
+    let color: string = req.query.color as string;
 
     const input = (await axios({ url: url, responseType: "arraybuffer" })).data as Buffer;
-    const frame = (await axios({ url: "https://tools.cnrad.dev/mockup/MacbookLight.png", responseType: "arraybuffer" })).data as Buffer;
+    const frame = (await axios({ url: `https://tools.cnrad.dev/mockup/Macbook${color}.png`, responseType: "arraybuffer" })).data as Buffer;
 
     // const canvas = createCanvas(2002, 1140);
     // const ctx = canvas.getContext('2d');
