@@ -50,7 +50,7 @@ export default function DeviceMockups() {
             </Head>
             <PageWrapper overflowY="scroll">
                 <UpperFlex>
-                    <Direction>Upload, paste, or type the URL for an image below</Direction>
+                    <Direction>{/* Upload, paste, or */}Type the URL for an image below</Direction>
                     <URLInput type="text" onChange={urlImg} />
                     <ImgInput id="imgInput" style={{zIndex: 100}} type='file' onChange={readImg} />
                     
@@ -98,6 +98,7 @@ const Direction = styled.h1`
 `
 
 const ImgInput = styled.input`
+    display: none;
     color: #fff;
 `
 

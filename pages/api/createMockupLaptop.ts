@@ -11,7 +11,8 @@ export default async function handler(
     res: NextApiResponse<Data>
 ) {
 
-    const url: string = req.query.url as string;
+    let url: string = req.query.url as string;
+    url = decodeURIComponent(url);
 
     console.log(url);
 
@@ -21,7 +22,7 @@ export default async function handler(
     let frame = await loadImage('https://tools.cnrad.dev/mockup/MacbookLight.png');
     ctx.drawImage(frame, 0, 0, 2002, 1140);
     
-    let screen = await loadImage(decodeURIComponent(url));
+    let screen = await loadImage(url);
     ctx.drawImage(screen, 229, 65, 1542, 965);
 
     let data = await canvas.toDataURL();
