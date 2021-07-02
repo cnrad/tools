@@ -50,7 +50,7 @@ export default function DeviceMockups() {
             <Head>
                 <title>Design Mockups</title>
             </Head>
-            <PageWrapper overflowY="scroll">
+            <PageWrapper>
                 <UpperFlex>
                     <Direction>{/* Upload, paste, or */}Type the URL for an image below</Direction>
                     <URLInput type="text" onChange={urlImg} />
