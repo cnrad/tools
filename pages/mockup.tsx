@@ -26,7 +26,11 @@ export default function DeviceMockups() {
         try {
             let res = await axios.get(`/api/createMockupLaptop?url=${encodeURIComponent(src)}`);
             console.log(res);
-            window.open(res.data.url);
+
+            var a = document.createElement("a"); 
+            a.href = res.data.url;
+            a.download = "mockup.png"; 
+            a.click(); 
         } catch (e) {
             console.log(e)
         }
