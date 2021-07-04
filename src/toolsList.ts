@@ -8,8 +8,12 @@ const toolsList = [
         name: "JSON Formatter"
     },
     {
-        url: "/mockup",
-        name: "Device Mockups"
+        url: "/mockup-macbook",
+        name: "Macbook Mockup"
+    },
+    {
+        url: "/mockup-phone",
+        name: "iPhone Mockup"
     },
     {
         url: "/color",
