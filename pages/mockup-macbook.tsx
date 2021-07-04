@@ -9,7 +9,7 @@ interface PasteEvent extends Event {
     clipboardData?: any;
 }
 
-export default function DeviceMockups() {
+export default function MacbookMockup() {
 
     const [deviceColor, setDeviceColor] = useState("Light");
 
