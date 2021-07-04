@@ -142,29 +142,32 @@ const FrameContainer = styled.div`
     position: relative;
     width: auto;
     height: auto;
-    width: 1001px;
-    height: 570px;
-    margin-bottom: 5rem;
+    width: 565px;
+    height: 1024px;
+    margin-bottom: 3rem;
 `
 
 const Frame = styled.img`
+    z-index: 5;
     position: absolute;
     top: calc(50% + 12px);
     left: 50%;
     transform: translate(-50%, -50%);
 
-    width: 1001px;
-    height: 570px;
+    width: 565px;
+    height: 1024px;
 `
 const Result = styled.img`
+    z-index: 4;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    margin-bottom: 0;
+    margin-top: 10px;
+    border-radius: 3rem;
 
-    width: 770px;
-    height: 478px;
+    width: 426px;
+    height: 925px;
 `
 
 const DownloadBtn = styled(motion.div)`
