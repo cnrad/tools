@@ -51,44 +51,54 @@ export default function PhoneMockup() {
                 <title>Design Mockups</title>
             </Head>
             <PageWrapper overflowY="scroll">
-                <UpperFlex>
-                    <Direction>{/* Upload, paste, or */}Type the URL for an image below</Direction>
-                    <URLInput type="text" onChange={urlImg} />
-                    <ToggleColor onClick={() => deviceColor === "Light" ? setDeviceColor("Dark") : setDeviceColor("Light")}
-                        whileHover={{scale: 0.9, backgroundColor: "rgba(80, 80, 80, 1)"}} 
-                        whileTap={{scale: 0.85, backgroundColor: "rgba(30, 30, 30, 1)"}}
-                        transition={{ease: "easeInOut", duration: 0.15}}
-                    >{deviceColor}</ToggleColor>
+                <RowFlex>
+                    <MainFlex>
+                        <Direction>{/* Upload, paste, or */}Type the URL for an image below</Direction>
+                        <URLInput type="text" onChange={urlImg} />
+                        <ToggleColor onClick={() => deviceColor === "Light" ? setDeviceColor("Dark") : setDeviceColor("Light")}
+                            whileHover={{scale: 0.9, backgroundColor: "rgba(80, 80, 80, 1)"}} 
+                            whileTap={{scale: 0.85, backgroundColor: "rgba(30, 30, 30, 1)"}}
+                            transition={{ease: "easeInOut", duration: 0.15}}
+                        >{deviceColor}</ToggleColor>
 
-                    <ImgInput id="imgInput" style={{zIndex: 100}} type='file' onChange={readImg} />
-                    
+                        <ImgInput id="imgInput" style={{zIndex: 100}} type='file' onChange={readImg} />
+
+                        <DownloadBtn 
+                            onClick={downloadBtn} 
+                            whileHover={{scale: 0.9, backgroundColor: "rgba(80, 80, 80, 1)"}} 
+                            transition={{ease: "easeInOut", duration: 0.15}}
+                        >
+                            Download Mockup
+                        </DownloadBtn>
+                    </MainFlex>
                     <FrameContainer>
-                        <Frame src={`/mockup/Phone.png`} />
-                        <Result src="" id="output" />
+                            <Frame src={`/mockup/Phone.png`} />
+                            <Result src="" id="output" />
                     </FrameContainer>
-
-                    <DownloadBtn 
-                        onClick={downloadBtn} 
-                        whileHover={{scale: 0.9, backgroundColor: "rgba(80, 80, 80, 1)"}} 
-                        transition={{ease: "easeInOut", duration: 0.15}}
-                    >
-                        Download Mockup
-                    </DownloadBtn>
-                </UpperFlex>
+                </RowFlex>
             </PageWrapper>
         </>
     );
 }
 
-const UpperFlex = styled.div`
+const RowFlex = styled.div`
     position: absolute;
-    top: 10%;
-    left: 50%;
-    transform: translate(-50%, 0%);
+    width: 100%;
+    height: 100%;
+    
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: nowrap;
+`
+
+const MainFlex = styled.div`
+    position: relative;
     font-family: -apple-system, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif;
 
-    width: 60%;
-    height: auto;
+    width: 40%;
+    height: 70%;
 
     display: flex;
     flex-direction: column;
@@ -112,7 +122,7 @@ const ImgInput = styled.input`
 
 const URLInput = styled.input`
     color: #fff;
-    width: 50%;
+    width: 80%;
     min-width: 15rem;
     height: 2rem;
     background: #18181b;
@@ -140,8 +150,6 @@ const ToggleColor = styled(motion.div)`
 
 const FrameContainer = styled.div`
     position: relative;
-    width: auto;
-    height: auto;
     width: 565px;
     height: 1024px;
     margin-bottom: 3rem;
@@ -154,8 +162,8 @@ const Frame = styled.img`
     left: 50%;
     transform: translate(-50%, -50%);
 
-    width: 565px;
-    height: 1024px;
+    width: 452px;
+    height: 819px;
 `
 const Result = styled.img`
     z-index: 4;
@@ -164,10 +172,10 @@ const Result = styled.img`
     left: 50%;
     transform: translate(-50%, -50%);
     margin-top: 10px;
-    border-radius: 3rem;
+    border-radius: 2rem;
 
-    width: 426px;
-    height: 925px;
+    width: 340px;
+    height: 740px;
 `
 
 const DownloadBtn = styled(motion.div)`
