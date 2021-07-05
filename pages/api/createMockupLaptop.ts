@@ -21,19 +21,6 @@ export default async function handler(
     const input = (await axios({ url: url, responseType: "arraybuffer" })).data as Buffer;
     const frame = (await axios({ url: `https://tools.cnrad.dev/mockup/Macbook${color}.png`, responseType: "arraybuffer" })).data as Buffer;
 
-    // const canvas = createCanvas(2002, 1140);
-    // const ctx = canvas.getContext('2d');
-
-    // let frame = await loadImage('https://tools.cnrad.dev/mockup/MacbookLight.png');
-    // ctx.drawImage(frame, 0, 0, 2002, 1140);
-    
-    // let screen = await loadImage(url);
-    // ctx.drawImage(screen, 229, 65, 1542, 965);
-
-    // let data = await canvas.toDataURL();
-
-    // res.status(200).json({url: data});
-
     let outputB64 = "";
 
     await sharp(input)

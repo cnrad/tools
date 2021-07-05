@@ -16,42 +16,41 @@ export default async function handler(
     let url: string = req.query.url as string;
     url = decodeURIComponent(url);
 
-    let color: string = req.query.color as string;
+    // let color: string = req.query.color as string;
 
     const input = (await axios({ url: url, responseType: "arraybuffer" })).data as Buffer;
     const frame = (await axios({ url: `https://tools.cnrad.dev/mockup/Phone.png`, responseType: "arraybuffer" })).data as Buffer;
 
-    // const canvas = createCanvas(2002, 1140);
-    // const ctx = canvas.getContext('2d');
-
-    // let frame = await loadImage('https://tools.cnrad.dev/mockup/MacbookLight.png');
-    // ctx.drawImage(frame, 0, 0, 2002, 1140);
-    
-    // let screen = await loadImage(url);
-    // ctx.drawImage(screen, 229, 65, 1542, 965);
-
-    // let data = await canvas.toDataURL();
-
-    // res.status(200).json({url: data});
-
     let outputB64 = "";
 
     await sharp(input)
-        .resize({width: 1542, height: 965, fit: sharp.fit.fill})
+        .resize({width: 851, height: 1850, fit: sharp.fit.fill})
         .toBuffer() 
         .then(async data => {
 
             await sharp(frame)
-                .resize(2002, 1140)
+                .resize(1129, 2048)
                 .composite([{
                     input: data,
-                    top: 65,
-                    left: 229
+                    top: 97,
+                    left: 139
                 }])
                 .png()
                 .toBuffer()
-                .then(data => {
-                    outputB64 = data.toString('base64');
+                .then(async data => {
+
+                    await sharp(data)
+                    .composite([{
+                        input: frame,
+                        top: 0,
+                        left: 0
+                    }])
+                    .png()
+                    .toBuffer()
+                    .then(data => {
+                        outputB64 = data.toString('base64');
+                    });
+
                 });
 
         })

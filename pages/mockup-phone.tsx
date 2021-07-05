@@ -85,7 +85,7 @@ const RowFlex = styled.div`
     position: absolute;
     width: 100%;
     height: 100%;
-    
+
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -150,8 +150,8 @@ const ToggleColor = styled(motion.div)`
 
 const FrameContainer = styled.div`
     position: relative;
-    width: 565px;
-    height: 1024px;
+    width: 452px;
+    height: 819px;
     margin-bottom: 3rem;
 `
 
