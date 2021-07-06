@@ -9,7 +9,7 @@ interface PasteEvent extends Event {
     clipboardData?: any;
 }
 
-export default function PhoneMockup() {
+const PhoneMockup = () => {
 
     const [deviceColor, setDeviceColor] = useState("Light");
 
@@ -191,3 +191,5 @@ const DownloadBtn = styled(motion.div)`
         cursor: pointer;
     }
 `
+
+export default PhoneMockup;

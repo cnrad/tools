@@ -2,8 +2,7 @@ import styled from 'styled-components';
 import Head from "next/head";
 import { motion } from 'framer-motion';
 
-export default function App() {
-
+const App = () => {
     return ( 
         <>
             <Head>
@@ -28,3 +27,5 @@ const Entire = styled(motion.div)`
     align-items: center;
     justify-content: center;
 `
+
+export default App;

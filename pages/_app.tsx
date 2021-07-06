@@ -5,7 +5,7 @@ import { AnimatePresence, motion } from 'framer-motion';
 
 import Nav from '../src/components/Nav';
 
-export default function MyApp({ Component, pageProps, router }: AppProps) {
+const MyApp = ({ Component, pageProps, router }: AppProps) => {
     return (
         <>
             <Head>
@@ -36,3 +36,4 @@ const Entire = styled(motion.div)`
     flex-direction: row;
 `
 
+export default MyApp;

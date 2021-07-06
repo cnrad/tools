@@ -9,7 +9,7 @@ interface PasteEvent extends Event {
     clipboardData?: any;
 }
 
-export default function MacbookMockup() {
+const MacbookMockup = () => {
 
     const [deviceColor, setDeviceColor] = useState("Light");
 
@@ -180,3 +180,5 @@ const DownloadBtn = styled(motion.div)`
         cursor: pointer;
     }
 `
+
+export default MacbookMockup;

@@ -6,7 +6,7 @@ import styled from 'styled-components';
 import { useCallback, useEffect, useState } from "react";
 import PageWrapper from "../src/components/PageWrapper";
 
-export default function JsonTs() {
+const JsonTs = () => {
 
     const [inputValue, setInputValue] = useState("");
     const [result, setResult] = useState("");
@@ -120,3 +120,5 @@ const Copy = styled(motion.button)`
     border: none;
     border-radius: 0.5rem;
 `
+
+export default JsonTs;

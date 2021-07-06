@@ -8,10 +8,10 @@ type Data = {
   url: string
 }
 
-export default async function handler(
+const handler = async(
     req: NextApiRequest,
     res: NextApiResponse<Data>
-) {
+) => {
 
     let url: string = req.query.url as string;
     url = decodeURIComponent(url);
@@ -60,3 +60,5 @@ export default async function handler(
 
     res.json({url: `data:image/png;base64,${outputB64}`})
 }
+
+export default handler;

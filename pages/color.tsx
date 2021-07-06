@@ -4,7 +4,7 @@ import PageWrapper from "../src/components/PageWrapper";
 import { useState, useEffect } from 'react';
 import { RgbaColorPicker } from "react-colorful";
 
-export default function ColorPicker() {
+const ColorPicker = () => {
 
     const [hexState, setHexState] = useState("#ff0000");
     const [rgbaState, setRgbaState] = useState({ r: 255, g: 0, b: 0, a: 1 });
@@ -162,3 +162,5 @@ const RgbaPicker = styled(RgbaColorPicker)`
         border-radius: 5px; 
     }
 `
+
+export default ColorPicker;
