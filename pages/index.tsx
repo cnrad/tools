@@ -5,24 +5,54 @@ import PageWrapper from "../src/components/PageWrapper";
 
 export default function App() {
 
+    const containerAnim = {
+        init: {
+            opacity: 1
+        },
+        load: {
+            opacity: 1,
+            transition: {
+                staggerChildren: 0.15
+            }
+        }
+    }
+
+    const childAnim = {
+        init: {
+            opacity: 0,
+            y: 15
+        },
+        load: {
+            opacity: 1,
+            y: 0,
+            transition: {
+                duration: 0.5,
+                ease: "easeInOut"
+            }
+        }
+    }
+
     return ( 
         <>
             <Head>
                 <title>cnrad toolkit</title>
             </Head>
             <PageWrapper>
-                <Main>
-                    <Large>
-                        <Cnrad>cnrad</Cnrad> toolkit
+                <Main initial="init" animate="load" variants={containerAnim}>
+                    <Large variants={childAnim}>
+                        tools.<Cnrad>cnrad</Cnrad>.dev
                     </Large>
-                    useful tools for the average developer
+                    <Desc variants={childAnim}>useful tools for the average developer</Desc>
+                    <Demo src="/demo.png" variants={childAnim} />
                 </Main>
-                <Footer>Inspired by&nbsp;
+                <Footer initial="init" animate="load" variants={containerAnim}>
+                    Inspired by&nbsp;
                     <motion.a 
                         href="https://uwu.red" 
                         style={{color: "#cd2f2f", borderBottom: "solid 1px rgba(198, 0, 0, 0)", textDecoration: "none"}} 
                         whileHover={{borderBottom: "solid 1px rgba(198, 0, 0, 1)"}} 
                         transition={{duration: 0.2, ease: 'easeInOut'}}
+                        variants={childAnim}
                     >uwu.red</motion.a>
                 </Footer>
             </PageWrapper>
@@ -30,16 +60,23 @@ export default function App() {
     );
 }
 
-const Main = styled.div`
+const Main = styled(motion.div)`
     color: #fff;
     font-family: -apple-system, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif;
     text-align: center;
     font-size: 1.5rem;
 `
 
-const Large = styled.div`
+const Large = styled(motion.div)`
     font-size: 4rem;
     width: 100%;
+    margin-bottom: -10px;
+`
+
+const Desc = styled(motion.p)`
+    font-size: 1.5rem;
+    width: 100%;
+    margin-bottom: 50px;
 `
 
 const Cnrad = styled(motion.span)`
@@ -51,7 +88,12 @@ const Cnrad = styled(motion.span)`
     user-select: none;
 `
 
-const Footer = styled.footer`
+const Demo = styled(motion.img)`
+    width: 700px;
+    height: 385px;
+`
+
+const Footer = styled(motion.footer)`
     position: absolute;
     color: #999;
     font-size: 1rem;
