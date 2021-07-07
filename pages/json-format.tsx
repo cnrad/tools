@@ -70,6 +70,7 @@ const TextArea = styled.textarea`
     color: #cfe8ff;
     background: #000;
     scrollbar-width: thin;
+    font-size: 1rem;
 `
 
 const Col = styled.div`
@@ -95,4 +96,5 @@ const Result = styled.pre`
     background: #000;
     overflow-y: scroll;
     scrollbar-width: thin;
+    font-size: 1rem;
 `
