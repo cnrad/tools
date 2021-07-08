@@ -65,6 +65,7 @@ const Main = styled(motion.div)`
     font-family: -apple-system, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif;
     text-align: center;
     font-size: 1.5rem;
+    margin-top: -25px;
 `
 
 const Large = styled(motion.div)`
@@ -101,5 +102,5 @@ const Footer = styled(motion.footer)`
     text-align: center;
     width: 100%;
 
-    bottom: 25px;
+    bottom: 35px;
 `
