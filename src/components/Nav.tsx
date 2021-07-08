@@ -18,7 +18,9 @@ export default function Nav() {
     return (
             <Container>
                 <Header>
-                    <Cnrad>cnrad</Cnrad> toolkit
+                    <Link href="/">
+                        <a><Cnrad>cnrad</Cnrad> toolkit</a>
+                    </Link>
                 </Header>
                 <ToolItems>
 
@@ -43,11 +45,15 @@ const Container = styled(motion.div)`
     width: 16rem;
     min-width: 16rem;
     height: 100%;
-
-    background: #18181b;
     color: #fff;
+    background: #18181b;
     font-family: -apple-system, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif;
     border-right: solid 0.1px #333;
+
+    a {
+        text-decoration: none;
+        color: inherit;
+    }
 `
 
 const Header = styled(motion.div)`
