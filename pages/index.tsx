@@ -49,6 +49,7 @@ export default function App() {
                     Inspired by&nbsp;
                     <motion.a 
                         href="https://uwu.red" 
+                        target="blank"
                         style={{color: "#cd2f2f", borderBottom: "solid 1px rgba(198, 0, 0, 0)", textDecoration: "none"}} 
                         whileHover={{borderBottom: "solid 1px rgba(198, 0, 0, 1)"}} 
                         transition={{duration: 0.2, ease: 'easeInOut'}}
