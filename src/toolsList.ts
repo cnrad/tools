@@ -18,6 +18,10 @@ const toolsList = [
     {
         url: "/color",
         name: "Color Picker"
+    },
+    {
+        url: "/lorem-ipsum",
+        name: "Lorem Ipsum"
     }
 ];
 
