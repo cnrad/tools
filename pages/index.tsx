@@ -54,14 +54,16 @@ export default function App() {
                         whileHover={{borderBottom: "solid 1px rgba(198, 0, 0, 1)"}} 
                         transition={{duration: 0.2, ease: 'easeInOut'}}
                         variants={childAnim}
-                    >uwu.red</motion.a>{" "} &#8226; {" "}<motion.a 
+                    >uwu.red</motion.a>
+                    {" "} &#8226; {" "} View the&nbsp;
+                    <motion.a 
                         href="https://github.com/cnrad/tools" 
                         target="blank"
-                        style={{color: "#c700ff", borderBottom: "solid 1px rgba(198, 0, 0, 0)", textDecoration: "none"}} 
-                        whileHover={{borderBottom: "solid 1px rgba(199, 0, 255, 1)"}} 
+                        style={{color: "#414fce", borderBottom: "solid 1px rgba(65, 79, 206, 0)", textDecoration: "none"}} 
+                        whileHover={{borderBottom: "solid 1px rgba(65, 79, 206, 1)"}} 
                         transition={{duration: 0.2, ease: 'easeInOut'}}
                         variants={childAnim}
-                    >Source code</motion.a>
+                    >source code</motion.a>
                 </Footer>
             </PageWrapper>
         </>

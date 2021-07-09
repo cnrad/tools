@@ -59,7 +59,7 @@ const Container = styled(motion.div)`
 const Header = styled(motion.div)`
     font-size: 2.5rem;
     font-weight: 400;
-    margin: 2rem 0 2rem 0.25rem;
+    margin: 2rem 0 1rem 0.25rem;
     user-select: none;
 `
 
@@ -76,6 +76,9 @@ const ToolItems = styled(motion.div)`
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
+
+    border-top: solid 0.1px #333;
+    padding-top: 1rem;
 `
 
 const ToolLink = styled(Link)`
