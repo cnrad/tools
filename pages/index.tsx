@@ -54,7 +54,14 @@ export default function App() {
                         whileHover={{borderBottom: "solid 1px rgba(198, 0, 0, 1)"}} 
                         transition={{duration: 0.2, ease: 'easeInOut'}}
                         variants={childAnim}
-                    >uwu.red</motion.a>
+                    >uwu.red</motion.a>{" "} &#8226; {" "}<motion.a 
+                        href="https://github.com/cnrad/tools" 
+                        target="blank"
+                        style={{color: "#c700ff", borderBottom: "solid 1px rgba(198, 0, 0, 0)", textDecoration: "none"}} 
+                        whileHover={{borderBottom: "solid 1px rgba(199, 0, 255, 1)"}} 
+                        transition={{duration: 0.2, ease: 'easeInOut'}}
+                        variants={childAnim}
+                    >Source code</motion.a>
                 </Footer>
             </PageWrapper>
         </>
@@ -78,6 +85,7 @@ const Large = styled(motion.div)`
 const Desc = styled(motion.p)`
     font-size: 1.5rem;
     width: 100%;
+    color: #ccc;
     margin-bottom: 50px;
 `
 
