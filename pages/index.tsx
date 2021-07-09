@@ -35,7 +35,7 @@ export default function App() {
     return ( 
         <>
             <Head>
-                <title>cnrad toolkit</title>
+                <title>🛠️ cnrad toolkit</title>
             </Head>
             <PageWrapper>
                 <Main initial="init" animate="load" variants={containerAnim}>

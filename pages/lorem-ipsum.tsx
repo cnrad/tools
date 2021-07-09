@@ -7,7 +7,7 @@ export default function LoremIpsum() {
     return (
         <>
             <Head>
-                <title>Lorem Ipsum Text</title>
+                <title>🛠️ Lorem Ipsum Text</title>
             </Head>
             <PageWrapper overflowY="scroll">
                 <Text>

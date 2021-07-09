@@ -48,7 +48,7 @@ export default function MacbookMockup() {
     return (
         <>
             <Head>
-                <title>Design Mockups</title>
+                <title>🛠️ Design Mockups</title>
             </Head>
             <PageWrapper overflowY="scroll">
                 <UpperFlex>

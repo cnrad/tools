@@ -42,7 +42,7 @@ export default function JsonTs() {
     return (
         <>
             <Head>
-                <title>JSON to Type Object</title>
+                <title>🛠️ JSON to Type Object</title>
             </Head>
             <PageWrapper>
                 <Container>

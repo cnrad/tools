@@ -33,7 +33,7 @@ export default function ColorPicker() {
     return (
         <>
             <Head>
-                <title>JSON Formatter</title>
+                <title>🛠️ JSON Formatter</title>
             </Head>
             <PageWrapper>
                 <Container>
