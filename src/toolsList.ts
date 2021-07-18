@@ -22,6 +22,10 @@ const toolsList = [
     {
         url: "/lorem-ipsum",
         name: "Lorem Ipsum"
+    },
+    {
+        url: "/snowflake",
+        name: "Snowflake to Date"
     }
 ];
 
